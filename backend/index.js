@@ -9,7 +9,7 @@ import cookieParser from "cookie-parser";
 dotenv.config();
 //App Config
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 connectDB();
 //Middlewares
@@ -17,14 +17,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? [
-            "https://your-frontend-app.vercel.app", // Replace with your actual frontend URL
-            "https://*.vercel.app",
-          ]
-        : "http://localhost:5173",
-    credentials: true,
+    origin: process.env.FRONTEND_URL, // read from .env
+    credentials: true, // allow cookies
   })
 );
 
