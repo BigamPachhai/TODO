@@ -21,7 +21,9 @@ const TodoApp = () => {
 
   const checkAuthStatus = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/auth/me", {
+      const backendUrl =
+        import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+      const response = await axios.get(backendUrl + "/api/auth/me", {
         withCredentials: true,
       });
       if (response.data) {
@@ -56,7 +58,7 @@ const TodoApp = () => {
                   <div className="text-center text-white mb-8">
                     <h1 className="text-4xl font-bold mb-4"> Todo App</h1>
                     <p className="text-lg mb-8">
-                   Make yourself more efficient!!
+                      Make yourself more efficient!!
                     </p>
                   </div>
 

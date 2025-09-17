@@ -9,7 +9,8 @@ const TodoProvider = (props) => {
   const [date, setdate] = useState("");
   const [dateInput, setdateInput] = useState("");
 
-  const backendUrl = "http://localhost:3000";
+  const backendUrl =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
   const toggleCompleted = async (id) => {
     try {
