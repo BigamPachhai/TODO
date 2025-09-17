@@ -56,7 +56,7 @@ const TodoApp = () => {
               <div className="min-h-screen bg-blue-400 flex items-center justify-center px-4">
                 <div className="max-w-md w-full">
                   <div className="text-center text-white mb-8">
-                    <h1 className="text-4xl font-bold mb-4"> Todo App</h1>
+                    <h1 className="text-4xl font-bold mb-4"> To-do APP</h1>
                     <p className="text-lg mb-8">
                       Make yourself more efficient!!
                     </p>
@@ -83,7 +83,7 @@ const TodoApp = () => {
 
                     <div className="mt-6 text-center">
                       <p className="text-sm text-gray-600">
-                        Please make an account to use my todo app
+                        Continue making an account for yourself
                       </p>
                     </div>
                   </div>

@@ -29,7 +29,7 @@ const Navbar = ({ authState, setAuthState }) => {
   return (
     <div className="flex justify-between items-center p-4 bg-blue-500 text-white">
       <Link to="/">
-        <h1 className="text-xl font-bold">My TODO APP</h1>
+        <h1 className="text-xl font-bold">TODO APP</h1>
       </Link>
 
       {authState.isLoggedIn ? (
