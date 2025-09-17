@@ -88,7 +88,12 @@ authRouter.post("/login", async (req, res) => {
     });
 
     //Set Cookie
-    res.cookie("token", token, { httpOnly: true });
+res.cookie("token", token, {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production", // only true in production
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+});
+
     res.status(200).json({ message: "Login successful", user });
   } catch (error) {
     res.status(500).json({ message: "Error logging in", error });
